@@ -3,6 +3,8 @@ import { syncDBConnection, testDBConnection } from './DB/Connection.js';
 import { User } from './DB/User/user.model.js';
 import { Post } from './DB/Post/post.model.js';
 import { Comment } from './DB/Comment/comment.model.js';
+import { userRouter } from './Modules/User/user.controller.js';
+import { ResponseError } from './util/ResponseError.js';
 
 
 
@@ -19,17 +21,16 @@ export async function bootstrap()
 
     server.use(express.json());
 
+    server.use("/users", userRouter);
 
     server.use((err, req, res, next) =>
     {
-        if (err.status)
+        if (err instanceof ResponseError)
         {
-            res.status(err.status).json({ "Application Error": err });
+            return res.status(err.statusCode).json({ error: err.message, statusCode: err.statusCode, info: err.info });
         }
-        else
-        {
-            res.status(500).json({ "Server Error": err });
-        }
+
+        res.status(500).json({ error: 'Server Error', err });
     });
 
     server.use((req, res, next) =>
