@@ -1,0 +1,17 @@
+{
+  "name": "assignment6",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./src/main.js",
+  "scripts": {
+    "start:dev": "node --watch ./src/main.js"
+  },
+  "author": "Omar-MK-20",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql2": "^3.16.1",
+    "sequelize": "^6.37.7"
+  }
+}
