@@ -24,13 +24,13 @@ export const User = sequelize.define('User',
                 {
                     if (password.length <= 6)
                     {
-                        throw new ResponseError("Password must be more than 6 characters", 422);
+                        throw new ResponseError("Custom validation: Password must be more than 6 characters", 422);
                     }
                 }
             }
         },
 
-        role: { type: DataTypes.ENUM("user", "admin"), defaultValue: "user" }
+        role: { type: DataTypes.ENUM("user", "admin"), defaultValue: "user", allowNull: false }
     },
     {
         timestamps: true
@@ -42,6 +42,6 @@ User.beforeCreate("checkNameLength", (user) =>
 {
     if (user.name.length <= 2)
     {
-        throw new ResponseError("Name must be more than 2 characters");
+        throw new ResponseError("`beforeCreate` Hook: Name must be more than 2 characters");
     }
 });
