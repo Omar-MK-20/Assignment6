@@ -71,21 +71,21 @@ The checklist below is used to track completed and pending tasks.
 
 ### User APIs
 
-- [ ] **POST /users/signup**
-    - [ ] Create user using `build()` + `save()`
-    - [ ] Check email uniqueness
-    - [ ] Handle validation errors
+- [x] **POST /users/signup**
+    - [x] Create user using `build()` + `save()`
+    - [x] Check email uniqueness
+    - [x] Handle validation errors
 
-- [ ] **PUT /users/:id**
-    - [ ] Create or update user by PK
-    - [ ] Use `skip validation`
+- [x] **PUT /users/:id**
+    - [x] Create or update user by PK
+    - [x] Use `skip validation`
 
-- [ ] **GET /users/by-email**
-    - [ ] Find user by email (query param)
+- [x] **GET /users/by-email**
+    - [x] Find user by email (query param)
 
-- [ ] **GET /users/:id**
-    - [ ] Retrieve user by PK
-    - [ ] Exclude `role` field from response
+- [x] **GET /users/:id**
+    - [x] Retrieve user by PK
+    - [x] Exclude `role` field from response
 
 ---
 
