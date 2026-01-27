@@ -5,6 +5,7 @@ import { Post } from './DB/Post/post.model.js';
 import { Comment } from './DB/Comment/comment.model.js';
 import { userRouter } from './Modules/User/user.controller.js';
 import { ResponseError } from './util/ResponseError.js';
+import { postRouter } from './Modules/Post/post.controller.js';
 
 
 
@@ -22,6 +23,7 @@ export async function bootstrap()
     server.use(express.json());
 
     server.use("/users", userRouter);
+    server.use("/posts", postRouter);
 
     server.use((err, req, res, next) =>
     {
