@@ -15,8 +15,8 @@ Comment.init({
     });
 
 
-User.hasMany(Comment);
+User.hasMany(Comment, { onDelete: 'RESTRICT', onUpdate: 'RESTRICT', foreignKey: { allowNull: false } });
 Comment.belongsTo(User);
 
-Post.hasMany(Comment);
+Post.hasMany(Comment, { onDelete: 'RESTRICT', onUpdate: 'RESTRICT', foreignKey: { allowNull: false } });
 Comment.belongsTo(Post);

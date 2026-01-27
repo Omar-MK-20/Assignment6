@@ -23,5 +23,5 @@ Post.init(
         paranoid: true
     });
 
-User.hasMany(Post, {});
-Post.belongsTo(User, {});
+User.hasMany(Post, { onDelete: 'RESTRICT', onUpdate: 'RESTRICT', foreignKey: { allowNull: false } });
+Post.belongsTo(User);
