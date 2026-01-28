@@ -1,6 +1,10 @@
+import { col, fn } from "sequelize";
+import { Comment } from "../../DB/Comment/comment.model.js";
 import { Post } from "../../DB/Post/post.model.js";
 import { User } from "../../DB/User/user.model.js";
 import { ResponseError } from "../../util/ResponseError.js";
+
+
 
 export async function createPost(bodyData)
 {
@@ -42,4 +46,33 @@ export async function deletePost(postId, bodyData)
     const result = await Post.destroy({ where: { id: postId, UserId: UserId } });
 
     return { message: "Post deleted successfully", result };
+}
+
+export async function getDetails()
+{
+    const posts = await Post.findAll({
+        include: [
+            { model: User, attributes: ["id", "name"] },
+            { model: Comment, attributes: ["id", "content"] }
+        ],
+        attributes: ["id", "title"]
+    });
+
+    if (!posts.length)
+    {
+        throw new ResponseError("No posts found", 404);
+    }
+
+    return { message: "success", result: posts };
+}
+
+export async function getCommentCount()
+{
+    const posts = await Post.findAll({
+        attributes: ["id", "title", [fn("COUNT", col("comments.id")), "CommentCount"]],
+        include: { model: Comment, attributes: [] },
+        group: ["id"]
+    });
+
+    return { message: "success", result: posts };
 }
