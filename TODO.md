@@ -98,16 +98,16 @@ The checklist below is used to track completed and pending tasks.
     - [x] Delete post by ID
     - [x] Ensure only post owner can delete
 
-- [ ] **GET /posts/details**
-    - [ ] Retrieve all posts
-    - [ ] Include:
-        - Post: `id`, `title`
-        - User: `id`, `name`
-        - Comments: `id`, `content`
+- [x] **GET /posts/details**
+    - [x] Retrieve all posts
+    - [x] Include:
+        - [x] Post: `id`, `title`
+        - [x] User: `id`, `name`
+        - [x] Comments: `id`, `content`
 
-- [ ] **GET /posts/comment-count**
-    - [ ] Retrieve all posts
-    - [ ] Include number of comments per post
+- [x] **GET /posts/comment-count**
+    - [x] Retrieve all posts
+    - [x] Include number of comments per post
 
 ---
 
