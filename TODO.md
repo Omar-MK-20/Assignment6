@@ -113,27 +113,27 @@ The checklist below is used to track completed and pending tasks.
 
 ### Comment APIs
 
-- [ ] **POST /comments**
-    - [ ] Create bulk comments
+- [x] **POST /comments**
+    - [x] Create bulk comments
 
-- [ ] **PATCH /comments/:commentId**
-    - [ ] Update comment content
-    - [ ] Ensure only comment owner can update
+- [x] **PATCH /comments/:commentId**
+    - [x] Update comment content
+    - [x] Ensure only comment owner can update
 
-- [ ] **POST /comments/find-or-create**
-    - [ ] Find comment by postId, userId, and content
-    - [ ] Create if not exists
+- [x] **POST /comments/find-or-create**
+    - [x] Find comment by postId, userId, and content
+    - [x] Create if not exists
 
-- [ ] **GET /comments/search**
-    - [ ] Search comments by word
-    - [ ] Return matched comments + count
+- [x] **GET /comments/search**
+    - [x] Search comments by word
+    - [x] Return matched comments + count
 
-- [ ] **GET /comments/newest/:postId**
-    - [ ] Retrieve 3 most recent comments for a post
+- [x] **GET /comments/newest/:postId**
+    - [x] Retrieve 3 most recent comments for a post
 
-- [ ] **GET /comments/details/:id**
-    - [ ] Retrieve comment by PK
-    - [ ] Include related User and Post info
+- [x] **GET /comments/details/:id**
+    - [x] Retrieve comment by PK
+    - [x] Include related User and Post info
 
 ---
 
