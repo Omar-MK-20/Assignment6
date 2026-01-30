@@ -10,13 +10,13 @@ userRouter.post("/signup", async (req, res) =>
     res.status(201).json(result);
 });
 
-userRouter.patch("/:id", async (req, res) =>
+userRouter.put("/:id", async (req, res) =>
 {
     const { id } = req.params;
     console.log(req.params);
     const result = await updateOrCreate(id, req.body);
 
-    res.status(200).json(result);
+    res.status(result.statusCode).json(result);
 });
 
 userRouter.get("/by-email", async (req, res) =>

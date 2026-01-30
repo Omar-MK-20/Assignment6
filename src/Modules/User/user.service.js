@@ -43,7 +43,12 @@ export async function updateOrCreate(userId, bodyData)
 
     const result = await User.upsert({ ...bodyData, id: userId }, { validate: false });
 
-    return { message: "User Updated successfully", result };
+    if (result[1])
+    {
+        return { statusCode: 201, message: "User created successfully", result };
+    }
+
+    return { statusCode: 200, message: "User updated successfully", result };
 }
 
 export async function getByEmail(email)
