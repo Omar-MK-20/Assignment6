@@ -1,11 +1,12 @@
 import express from 'express';
 import { syncDBConnection, testDBConnection } from './DB/Connection.js';
-import { createBulkComments } from './DB/Comment/comment.model.js';
-import { createBulkPosts } from './DB/Post/post.model.js';
-import { createBulkUsers } from './DB/User/user.model.js';
+import { generateBulkComments } from './DB/Comment/comment.model.js';
+import { generateBulkPosts } from './DB/Post/post.model.js';
+import { generateBulkUsers } from './DB/User/user.model.js';
 import { postRouter } from './Modules/Post/post.controller.js';
 import { userRouter } from './Modules/User/user.controller.js';
 import { ResponseError } from './util/ResponseError.js';
+import { commentRouter } from './Modules/Comment/comment.controller.js';
 
 
 
@@ -17,9 +18,9 @@ export async function bootstrap()
 
     // create bulk data to test the api upon
     // uncomment only in the first run 
-    // await createBulkUsers();
-    // await createBulkPosts();
-    // await createBulkComments();
+    // await generateBulkUsers();
+    // await generateBulkPosts();
+    // await generateBulkComments();
 
 
 
@@ -32,6 +33,7 @@ export async function bootstrap()
 
     server.use("/users", userRouter);
     server.use("/posts", postRouter);
+    server.use("/comments", commentRouter);
 
     server.use((err, req, res, next) =>
     {
