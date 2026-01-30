@@ -40,7 +40,7 @@ export async function deletePost(postId, bodyData)
 
     if (!usersPost)
     {
-        throw new ResponseError("You are not authorized to delete this post", 403, { reason: "Forbidden" });
+        throw new ResponseError("You are not authorized to delete this post", 403, { UserId: UserId });
     }
 
     const result = await Post.destroy({ where: { id: postId, UserId: UserId } });

@@ -14,8 +14,6 @@ postRouter.delete("/:postId", async (req, res) =>
 {
     const { postId } = req.params;
 
-    console.log(req.params);
-
     const result = await deletePost(postId, req.body);
 
     res.status(200).json(result);
