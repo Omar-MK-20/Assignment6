@@ -31,7 +31,7 @@ Post.belongsTo(User);
  * Function that generates a dummy data to use in testing api.
  * `Post` data
  */
-export async function createBulkPosts()
+export async function generateBulkPosts()
 {
     // 1️⃣ Fetch user IDs dynamically
     const users = await User.findAll({

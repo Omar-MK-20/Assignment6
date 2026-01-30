@@ -50,7 +50,7 @@ User.beforeCreate("checkNameLength", (user) =>
  * Function that generates a dummy data to use in testing api.
  * `User` data
  */
-export async function createBulkUsers()
+export async function generateBulkUsers()
 {
     const names = [
         "Omar Mohamed",

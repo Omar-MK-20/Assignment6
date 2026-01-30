@@ -26,7 +26,7 @@ Comment.belongsTo(Post);
  * Function that generates a dummy data to use in testing api.
  * `Comment` data
  */
-export async function createBulkComments()
+export async function generateBulkComments()
 {
     // 1️⃣ Fetch IDs dynamically
     const users = await User.findAll({
