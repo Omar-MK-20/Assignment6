@@ -139,26 +139,26 @@ The checklist below is used to track completed and pending tasks.
 
 ## Postman Requirements
 
-- [ ] Use meaningful request names
-- [ ] Save requests (Ctrl + S)
-- [ ] Export Postman collection
-- [ ] Include Postman link with assignment submission
+- [x] Use meaningful request names
+- [x] Save requests (Ctrl + S)
+- [x] Export Postman collection
+- [x] Include Postman link with assignment submission
 
 ---
 
 ## Bonus (Optional)
 
-- [ ] Solve **Remove Element** problem on LeetCode
-- [ ] Create `bonus.js` file
-- [ ] Paste submitted solution code into `bonus.js`
+- [x] Solve **Remove Element** problem on LeetCode
+- [x] Create `bonus.js` file
+- [x] Paste submitted solution code into `bonus.js`
 
 ---
 
 ## Submission Checklist
 
-- [ ] All APIs tested
+- [x] All APIs tested
 - [ ] README updated
-- [ ] Project runs without errors
-- [ ] Bonus completed (if applicable)
+- [x] Project runs without errors
+- [x] Bonus completed (if applicable)
 
 ---
