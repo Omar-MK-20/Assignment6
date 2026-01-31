@@ -8,6 +8,11 @@ export async function createBulkComments(bodyData)
 {
     const { comments } = bodyData;
 
+    if (!comments)
+    {
+        throw new ResponseError("Data sent in request is not in the right format, look at postman docs", 422, { bodyData });
+    }
+
     const result = await Comment.bulkCreate(comments);
 
     return { message: "Comments created successfully", result };
@@ -21,7 +26,7 @@ export async function updateComment(commentId, bodyData)
 
     if (!existComment)
     {
-        throw new ResponseError("Comment doesn't exist", 404, { commentId });
+        throw new ResponseError("Comment not found", 404, { commentId });
     }
 
     const { UserId, content } = bodyData;

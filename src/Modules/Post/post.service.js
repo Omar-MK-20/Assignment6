@@ -63,7 +63,7 @@ export async function getDetails()
         throw new ResponseError("No posts found", 404);
     }
 
-    return { message: "success", result: posts };
+    return { message: "success", posts };
 }
 
 export async function getCommentCount()
@@ -74,5 +74,5 @@ export async function getCommentCount()
         group: ["id"]
     });
 
-    return { message: "success", result: posts };
+    return { message: "success", posts };
 }

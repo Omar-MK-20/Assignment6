@@ -57,7 +57,7 @@ export async function getByEmail(email)
 
     if (!user)
     {
-        throw new ResponseError("No user found", 404);
+        throw new ResponseError("No user found", 404, { email });
     }
 
     return { message: "success", user };
@@ -69,7 +69,7 @@ export async function getById(userId)
 
     if (!user)
     {
-        throw new ResponseError("no user found");
+        throw new ResponseError("no user found", 404, { userId });
     }
 
     return { message: "success", user };
