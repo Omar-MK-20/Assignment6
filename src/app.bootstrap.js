@@ -42,6 +42,11 @@ export async function bootstrap()
             return res.status(err.statusCode).json({ error: err.message, statusCode: err.statusCode, info: err.info });
         }
 
+        if (err.original?.code == 'ER_DUP_ENTRY')
+        {
+            res.status(404).json({ error: 'Server Error', message: err.errors.message, name: err.name, error: err.errors });
+        }
+
         res.status(500).json({ error: 'Server Error', message: err.message, stack: err.stack, name: err.name, err });
     });
 
